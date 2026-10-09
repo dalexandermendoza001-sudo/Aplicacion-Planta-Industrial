@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soluciones Industriales · Automatización e Instrumentación</title>
+<meta name="description" content="Automatización, instrumentación y control para cada área de tu planta de procesos.">
+<link rel="stylesheet" href="./dist/output.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans bg-white text-slate-800 antialiased">
+
+  <!-- ══════════════ NAVBAR ══════════════ -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 lg:h-20">
+        
+        <a href="#" class="flex items-center gap-2">
+          <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-500 to-accent flex items-center justify-center">
+            <span id="logo-inicial" class="text-white font-bold text-lg">E</span>
+          </div>
+          <span id="logo-nombre" class="font-bold text-lg text-slate-900 hidden sm:block">Empresa</span>
+        </a>
+
+        <div class="hidden lg:flex items-center gap-8">
+          <a href="#areas" class="text-sm font-medium text-slate-600 hover:text-brand-500 transition">Áreas</a>
+          <a href="#casos" class="text-sm font-medium text-slate-600 hover:text-brand-500 transition">Casos</a>
+          <a href="#proceso" class="text-sm font-medium text-slate-600 hover:text-brand-500 transition">Cómo trabajamos</a>
+          <a href="#asesor" class="text-sm font-medium text-slate-600 hover:text-brand-500 transition">Asesor</a>
+          <a href="#contacto" class="text-sm font-medium text-slate-600 hover:text-brand-500 transition">Contacto</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a href="#contacto" id="nav-cta" class="hidden sm:inline-flex btn-primario text-sm">
+            Cuéntanos tu requerimiento
+          </a>
+          <button id="menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition" aria-label="Menú">
+            <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="menu-movil" class="hidden lg:hidden border-t border-slate-200 bg-white">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="#areas" class="text-sm font-medium text-slate-700 py-2">Áreas</a>
+        <a href="#casos" class="text-sm font-medium text-slate-700 py-2">Casos</a>
+        <a href="#proceso" class="text-sm font-medium text-slate-700 py-2">Cómo trabajamos</a>
+        <a href="#asesor" class="text-sm font-medium text-slate-700 py-2">Asesor</a>
+        <a href="#contacto" class="text-sm font-medium text-slate-700 py-2">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════ HERO + MAPA ══════════════ -->
+  <section id="inicio" class="relative pt-28 lg:pt-36 pb-16 lg:pb-24 overflow-hidden bg-gradient-to-b from-brand-50 via-white to-white">
+    
+    <div class="absolute inset-0 -z-10 overflow-hidden">
+      <div class="absolute top-20 -left-20 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
+      <div class="absolute top-40 -right-20 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-brand-100 text-brand-700 text-xs font-semibold tracking-wider uppercase mb-5">
+          Soluciones Industriales
+        </span>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight mb-5">
+          ¿Qué quieres
+          <span class="bg-gradient-to-r from-brand-500 to-accent bg-clip-text text-transparent">
+            mejorar
+          </span>
+          en tu planta?
+        </h1>
+        
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Explora cada área de tu proceso y descubre cómo podemos ayudarte a optimizarla.
+        </p>
+      </div>
+
+      <!-- MAPA INTERACTIVO -->
+      <div id="areas" class="relative">
+        <div id="mapa-contenedor" class="relative rounded-2xl overflow-hidden shadow-2xl bg-white">
+          <img id="mapa-imagen" src="./img/planta.png" alt="Planta de procesos" class="w-full h-auto block">
+          <!-- Los marcadores se inyectan desde JS -->
+        </div>
+
+        <p class="text-center text-sm text-slate-500 mt-8 flex items-center justify-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
+          </svg>
+          Haz clic en cualquier área para ver las soluciones
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CASOS SIMILARES ══════════════ -->
+  <section id="casos" class="py-20 lg:py-28 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Casos similares</h2>
+        <p class="text-slate-600 max-w-2xl mx-auto">Proyectos que ya hemos implementado en plantas como la tuya.</p>
+      </div>
+      <div id="casos-grid" class="grid md:grid-cols-3 gap-6">
+        <!-- Se inyecta desde JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CÓMO TRABAJAMOS ══════════════ -->
+  <section id="proceso" class="py-20 lg:py-28">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Cómo trabajamos</h2>
+        <p class="text-slate-600 max-w-2xl mx-auto">Un proceso consultivo, no una venta agresiva.</p>
+      </div>
+      <ol id="timeline" class="relative border-l-2 border-brand-200 ml-4 space-y-10">
+        <!-- Se inyecta desde JS -->
+      </ol>
+    </div>
+  </section>
+
+  <!-- ══════════════ ASESOR ══════════════ -->
+  <section id="asesor" class="py-20 lg:py-28 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12 flex flex-col md:flex-row items-center gap-8">
+        <img id="asesor-foto" src="./img/asesor.jpg" alt="Asesor técnico" 
+             class="w-32 h-32 lg:w-40 lg:h-40 rounded-full object-cover border-4 border-brand-100">
+        <div class="flex-1 text-center md:text-left">
+          <h3 id="asesor-nombre" class="text-2xl font-bold text-slate-900 mb-1">Ing. Asesor</h3>
+          <p id="asesor-cargo" class="text-brand-500 font-medium mb-4">Especialista</p>
+          <p class="text-slate-600 mb-6">
+            Habla directamente con un ingeniero. Sin comerciales, sin intermediarios.
+          </p>
+          <a id="asesor-whatsapp" href="#" target="_blank"
+             class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green-500 text-white font-semibold hover:bg-green-600 transition shadow-lg">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Hablar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ FORMULARIO ══════════════ -->
+  <section id="contacto" class="py-20 lg:py-28">
+    <div class="max-w-2xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Cuéntanos tu requerimiento</h2>
+        <p class="text-slate-600">Un ingeniero te contactará en menos de 24 horas.</p>
+      </div>
+      
+      <form id="formulario" class="bg-white rounded-2xl shadow-xl p-8 space-y-5">
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">Nombre</label>
+          <input type="text" name="nombre" required
+                 class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none transition">
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">Empresa</label>
+          <input type="text" name="empresa" required
+                 class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none transition">
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2">Email</label>
+            <input type="email" name="email" required
+                   class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none transition">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2">Teléfono</label>
+            <input type="tel" name="telefono"
+                   class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none transition">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">Área de interés</label>
+          <select name="area" id="form-area"
+                  class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none transition bg-white">
+            <option value="">Selecciona un área</option>
+            <!-- Opciones se inyectan desde JS -->
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">¿Qué te gustaría mejorar?</label>
+          <textarea name="mensaje" rows="4" required
+                    class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none transition resize-none"
+                    placeholder="Describe brevemente tu situación actual..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primario w-full justify-center">
+          Enviar requerimiento
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </button>
+
+        <p id="form-mensaje" class="text-center text-sm hidden"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer class="bg-slate-900 text-slate-300 py-12">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div id="footer-contenido" class="grid md:grid-cols-3 gap-8">
+        <!-- Se inyecta desde JS -->
+      </div>
+      <div class="border-t border-slate-800 mt-10 pt-6 text-center text-sm text-slate-500">
+        © <span id="footer-año"></span> <span id="footer-empresa">Empresa</span>. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL/PANEL DE ÁREA -->
+  <div id="panel-overlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-2xl max-w-2xl w-full p-8 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+      <button id="cerrar-panel" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-2xl leading-none transition">&times;</button>
+      <h3 id="panel-titulo" class="text-2xl font-bold text-slate-900 mb-3"></h3>
+      <p id="panel-descripcion" class="text-slate-600 mb-6"></p>
+      
+      <h4 class="font-semibold text-slate-900 mb-3">Soluciones típicas:</h4>
+      <ul id="panel-soluciones" class="space-y-2 mb-6"></ul>
+      
+      <h4 class="font-semibold text-slate-900 mb-3">Para entender mejor tu caso:</h4>
+      <ul id="panel-preguntas" class="space-y-2 mb-8"></ul>
+      
+      <button id="panel-cta" class="btn-primario w-full justify-center">
+        Quiero mejorar esta área
+      </button>
+    </div>
+  </div>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
