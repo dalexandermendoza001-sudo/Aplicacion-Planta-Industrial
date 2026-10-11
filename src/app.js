@@ -23,7 +23,7 @@ config.mapa.areas.forEach(area => {
   btn.innerHTML = `
     ${area.id}
     <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-slate-900 text-white 
-                 px-3 py-1 rounded-lg text-xs whitespace-nowrap opacity-0 hover:opacity-100 
+                 px-1 py-1 rounded-lg text-xs whitespace-nowrap opacity-0 hover:opacity-100 
                  transition pointer-events-none">
       ${area.nombre}
     </span>

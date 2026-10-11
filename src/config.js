@@ -19,8 +19,8 @@ export const config = {
     areas: [
       {
         id: 1,
-        nombre: "Recepción de materia prima",
-        posicion: { top: "18%", left: "12%" },
+        nombre: "Bodegas",
+        posicion: { top: "28%", left: "70%" },
         color: "#6b9bd1",
         descripcion: "Registro, pesaje y verificación de materiales que ingresan a la planta.",
         soluciones: [
@@ -35,8 +35,8 @@ export const config = {
       },
       {
         id: 2,
-        nombre: "Almacenamiento",
-        posicion: { top: "25%", left: "28%" },
+        nombre: "Mantenimiento",
+        posicion: { top: "6%", left: "37%" },
         color: "#7dc47d",
         descripcion: "Gestión y control de inventarios de materia prima y producto terminado.",
         soluciones: [
@@ -52,7 +52,7 @@ export const config = {
       {
         id: 3,
         nombre: "Producción",
-        posicion: { top: "35%", left: "45%" },
+        posicion: { top: "10%", left: "53%" },
         color: "#f4a896",
         descripcion: "Transformación de materia prima en producto terminado.",
         soluciones: [
@@ -68,9 +68,9 @@ export const config = {
       {
         id: 4,
         nombre: "Control y Calidad",
-        posicion: { top: "30%", left: "62%" },
+        posicion: { top: "66%", left: "12%" },
         color: "#f4c542",
-        descripcion: "Verificación de que el producto cumple especificaciones.",
+        descripcion: "Administración.",
         soluciones: [
           "Sistemas de visión artificial",
           "Control estadístico de procesos (SPC)",
@@ -81,26 +81,11 @@ export const config = {
           "¿Cuántos defectos detectas por lote?"
         ]
       },
-      {
-        id: 5,
-        nombre: "Empacado",
-        posicion: { top: "60%", left: "35%" },
-        color: "#b8a5d1",
-        descripcion: "Empaque final y preparación para distribución.",
-        soluciones: [
-          "Automatización de líneas de empaque",
-          "Etiquetado automático",
-          "Detección de defectos en línea"
-        ],
-        preguntas: [
-          "¿El empaque es manual o automatizado?",
-          "¿Cuál es tu velocidad actual de empaque?"
-        ]
-      },
+     
       {
         id: 6,
         nombre: "Logística / Despacho",
-        posicion: { top: "70%", left: "60%" },
+        posicion: { top: "85%", left: "34%" },
         color: "#7ec8c8",
         descripcion: "Preparación de pedidos y despacho de producto terminado.",
         soluciones: [
@@ -114,9 +99,9 @@ export const config = {
         ]
       },
       {
-        id: 7,
-        nombre: "Utilities / Servicios",
-        posicion: { top: "80%", left: "20%" },
+        id: 5,
+        nombre: "Servicios industriales",
+        posicion: { top: "15%", left: "3%" },
         color: "#e89b7d",
         descripcion: "Suministro de servicios auxiliares (agua, vapor, aire, energía).",
         soluciones: [

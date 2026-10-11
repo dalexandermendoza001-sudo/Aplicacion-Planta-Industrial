@@ -5,19 +5,17 @@
 /* Componentes personalizados */
 @layer components {
   .marcador {
-    @apply absolute w-11 h-11 rounded-full flex items-center justify-center 
-           font-bold text-white cursor-pointer transition-all duration-200
-           -translate-x-1/2 -translate-y-1/2 z-10;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 0 0 4px rgba(255,255,255,0.9);
+  @apply absolute rounded-full flex items-center justify-center font-medium text-white cursor-pointer m-0 p-0 ;
+
+width: clamp(19px, 3vw, 40px);
+height: clamp(19px, 3vw, 40px);
+font-size: clamp(10px, 1.2vw, 16px);
   }
-  .marcador:hover {
-    @apply scale-125 z-20;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3), 0 0 0 6px rgba(255,255,255,1);
-  }
+ 
   .btn-primario {
-    @apply inline-flex items-center gap-2 px-7 py-3.5 rounded-full 
+    @apply inline-flex items-center gap-2 px-1 py-1 rounded-full 
            bg-brand-500 text-white font-semibold 
-           hover:bg-brand-600 transition shadow-lg 
+           hover:bg-brand-600 transition shadow-sm shadow-lg 
            shadow-brand-500/25 hover:shadow-xl hover:shadow-brand-500/35;
   }
   .btn-secundario {
