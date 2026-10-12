@@ -55,11 +55,13 @@ function abrirPanel(area) {
       <span class="text-slate-400 mt-1">?</span><span>${p}</span>
     </li>`).join('');
   
-  panelCta.onclick = () => {
-    cerrarPanelFn();
-    document.getElementById('form-area').value = area.id;
-    document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
-  };
+ panelCta.onclick = () => {
+  cerrarPanelFn();
+
+  document.getElementById('form-area').value = area.id;
+
+  mostrarVista('contacto');
+};
   
   panelOverlay.classList.remove('hidden');
   panelOverlay.classList.add('flex');
@@ -161,7 +163,79 @@ formulario.addEventListener('submit', async (e) => {
   }, 6000);
 });
 
-// ══════════════ MENÚ MÓVIL ══════════════
+// ══════════════ NAVEGACIÓN ENTRE VISTAS ══════════════
+
+const vistas = {
+  planta: document.getElementById('inicio'),
+  casos: document.getElementById('casos'),
+  proceso: document.getElementById('proceso'),
+  asesor: document.getElementById('asesor'),
+  contacto: document.getElementById('contacto')
+};
+
+function mostrarVista(nombreVista) {
+  const vistaSeleccionada = vistas[nombreVista];
+
+  if (!vistaSeleccionada) {
+    console.warn(`La vista "${nombreVista}" no existe.`);
+    return;
+  }
+
+  // Mostrar únicamente la vista seleccionada.
+  Object.entries(vistas).forEach(([nombre, elemento]) => {
+    elemento.hidden = nombre !== nombreVista;
+  });
+
+  // Actualizar el estado visual de los enlaces.
+  document.querySelectorAll('nav [data-vista]').forEach(enlace => {
+    const activo = enlace.dataset.vista === nombreVista;
+
+    enlace.setAttribute('aria-current', activo ? 'page' : 'false');
+
+    // Enlaces de escritorio.
+    if (enlace.classList.contains('text-slate-600')) {
+      enlace.classList.toggle('text-brand-500', activo);
+      enlace.classList.toggle('text-slate-600', !activo);
+    }
+
+    // Enlaces de la navegación móvil.
+    if (
+      enlace.classList.contains('text-slate-500') ||
+      enlace.classList.contains('text-brand-500')
+    ) {
+      enlace.classList.toggle('text-brand-500', activo);
+      enlace.classList.toggle('text-slate-500', !activo);
+    }
+
+    // Diferenciar la etiqueta seleccionada en el móvil.
+    const etiqueta = enlace.querySelector('span');
+
+    if (etiqueta) {
+      etiqueta.classList.toggle('font-semibold', activo);
+      etiqueta.classList.toggle('font-medium', !activo);
+    }
+  });
+
+  // Volver al inicio del contenido.
+  window.scrollTo({
+    top: 0,
+    behavior: 'auto'
+  });
+}
+
+// ══════════════ EVENTOS DE NAVEGACIÓN ══════════════
+
+document.querySelectorAll('[data-vista]').forEach(enlace => {
+  enlace.addEventListener('click', evento => {
+    evento.preventDefault();
+
+    const nombreVista = enlace.dataset.vista;
+    mostrarVista(nombreVista);
+  });
+});
+// ══════════════ VISTA INICIAL ══════════════
+
+mostrarVista('planta');
 
 
 

@@ -52,7 +52,11 @@
       </div>
 
       <!-- ACCIÓN DE ESCRITORIO -->
-      <a href="#contacto" class="hidden lg:inline-flex btn-primario text-sm">
+      <a
+        href="#contacto"
+        data-vista="contacto"
+        class="hidden lg:inline-flex btn-primario text-sm"
+      >
         Cuéntanos tu requerimiento
       </a>
 
@@ -60,10 +64,11 @@
   </div>
 </nav>
 
-
+  <!-- CONTENEDOR PRINCIPAL DE VISTAS -->
+ <main id="contenedor-vistas">
 
   <!-- ══════════════ HERO + MAPA ══════════════ -->
-  <section id="inicio" class="inicio relative pt-20 lg:pt-36 pb-16 lg:pb-24 overflow-hidden bg-gradient-to-b from-brand-50 via-white to-white">
+  <section id="inicio" data-vista="planta" class="inicio relative pt-30 lg:pt-36 pb-16 lg:pb-24 overflow-hidden bg-gradient-to-b from-brand-50 via-white to-white">
     
     <div class="absolute inset-0 -z-10 overflow-hidden">
       <div class="absolute top-20 -left-20 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
@@ -107,7 +112,7 @@
   </section>
 
   <!-- ══════════════ CASOS SIMILARES ══════════════ -->
-  <section id="casos" class="py-20 lg:py-28 bg-slate-50">
+  <section id="casos" href="#casos" data-vista="casos" class="py-20 lg:py-28 bg-slate-50">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Casos similares</h2>
@@ -120,7 +125,7 @@
   </section>
 
   <!-- ══════════════ CÓMO TRABAJAMOS ══════════════ -->
-  <section id="proceso" class="py-20 lg:py-28">
+  <section id="proceso" href="#proceso" data-vista="proceso" class="py-20 lg:py-28">
     <div class="max-w-5xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-16">
         <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Cómo trabajamos</h2>
@@ -133,7 +138,7 @@
   </section>
 
   <!-- ══════════════ ASESOR ══════════════ -->
-  <section id="asesor" class="py-20 lg:py-28 bg-slate-50">
+  <section id="asesor" href="#asesor" data-vista="asesor" class="py-20 lg:py-28 bg-slate-50">
     <div class="max-w-5xl mx-auto px-6 lg:px-8">
       <div class="bg-white rounded-3xl shadow-xl p-8 lg:p-12 flex flex-col md:flex-row items-center gap-8">
         <img id="asesor-foto" src="./img/asesor.jpg" alt="Asesor técnico" 
@@ -157,7 +162,7 @@
   </section>
 
   <!-- ══════════════ FORMULARIO ══════════════ -->
-  <section id="contacto" class="py-20 lg:py-28">
+  <section id="contacto" href="#contacto" data-vista="contacto" class="py-20 lg:py-28">
     <div class="max-w-2xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Cuéntanos tu requerimiento</h2>
@@ -218,6 +223,7 @@
     </div>
   </section>
 
+ </main>
   <!-- ══════════════ FOOTER ══════════════ -->
   <footer class="bg-slate-900 text-slate-300 py-12">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -255,13 +261,13 @@
     class="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white/95 backdrop-blur-md border-t border-slate-200"
     style="padding-bottom: env(safe-area-inset-bottom);"
   >
-    <div class="grid grid-cols-4 max-w-lg mx-auto">
+    <div class="grid grid-cols-5 max-w-lg mx-auto">
 
       <!-- PLANTA -->
       <a
-        href="#areas"
+        href="#inicio"
+        data-vista="planta"
         aria-label="Planta"
-        aria-current="location"
         class="flex flex-col items-center justify-center gap-1 py-2 text-brand-500"
       >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -274,9 +280,9 @@
       </a>
 
       <!-- CASOS -->
-      <a
-        href="#casos"
-        aria-label="Casos"
+      <a  href="#casos"
+          data-vista="Casos"
+          aria-label="Casos"
         class="flex flex-col items-center justify-center gap-1 py-2 text-slate-500 hover:text-brand-500 transition"
       >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -290,7 +296,8 @@
       <!-- ASESOR -->
       <a
         href="#asesor"
-        aria-label="Asesor"
+        data-vista="asesor"
+        aria-label="asesor"
         class="flex flex-col items-center justify-center gap-1 py-2 text-slate-500 hover:text-brand-500 transition"
       >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -302,9 +309,10 @@
       </a>
 
       <!-- CONTACTO -->
-      <a
-        href="#contacto"
-        aria-label="Contacto"
+      <a 
+          href="#contacto"
+          data-vista="contacto"
+          aria-label="contacto"
         class="flex flex-col items-center justify-center gap-1 py-2 text-slate-500 hover:text-brand-500 transition"
       >
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -314,8 +322,23 @@
         </svg>
         <span class="text-xs font-medium">Contacto</span>
       </a>
+      <!-- PROCESO -->
+      <a
+        href="#proceso"
+        data-vista="proceso"
+        aria-label="Proceso"
+        class="flex flex-col items-center justify-center gap-1 py-2 text-slate-500 hover:text-brand-500 transition"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke-width="1.8"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 7v5l3 2"/>
+        </svg>
+        <span class="text-xs font-medium">Proceso</span>
+      </a>
 
     </div>
+
+    
   </nav>
   <script type="module" src="./src/app.js"></script>
 </body>
