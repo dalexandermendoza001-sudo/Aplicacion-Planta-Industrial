@@ -162,11 +162,11 @@ formulario.addEventListener('submit', async (e) => {
 });
 
 // ══════════════ MENÚ MÓVIL ══════════════
-const menuBtn = document.getElementById('menu-btn');
-const menuMovil = document.getElementById('menu-movil');
-menuBtn.addEventListener('click', () => {
-  menuMovil.classList.toggle('hidden');
-});
+
+
+
+
+
 
 // ══════════════ FOOTER ══════════════
 document.getElementById('footer-contenido').innerHTML = `

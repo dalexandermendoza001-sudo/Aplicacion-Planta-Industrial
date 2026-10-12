@@ -9,62 +9,67 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body class="font-sans bg-white text-slate-800 antialiased">
+<body class="font-sans bg-white text-slate-800 antialiased pb-20 lg:pb-0">
 
   <!-- ══════════════ NAVBAR ══════════════ -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 lg:h-20">
-        
-        <a href="#" class="flex items-center gap-2">
-          <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-500 to-accent flex items-center justify-center">
-            <span id="logo-inicial" class="text-white font-bold text-lg">E</span>
-          </div>
-          <span id="logo-nombre" class="font-bold text-lg text-slate-900 hidden sm:block">Empresa</span>
+<!-- NAVEGACIÓN SUPERIOR -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 lg:h-20">
+
+      <!-- LOGO -->
+      <a href="#areas" class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-500 to-accent flex items-center justify-center">
+          <span id="logo-inicial" class="text-white font-bold text-lg">E</span>
+        </div>
+
+        <span id="logo-nombre" class="font-bold text-lg text-slate-900 hidden sm:block">
+          Empresa
+        </span>
+      </a>
+
+      <!-- NAVEGACIÓN DE ESCRITORIO -->
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="#areas" class="text-sm font-medium text-slate-600 hover:text-brand-500 transition">
+          Áreas
         </a>
 
-        <div class="hidden lg:flex items-center gap-8">
-          <a href="#areas" class="text-sm font-medium text-slate-600 hover:text-brand-500 transition">Áreas</a>
-          <a href="#casos" class="text-sm font-medium text-slate-600 hover:text-brand-500 transition">Casos</a>
-          <a href="#proceso" class="text-sm font-medium text-slate-600 hover:text-brand-500 transition">Cómo trabajamos</a>
-          <a href="#asesor" class="text-sm font-medium text-slate-600 hover:text-brand-500 transition">Asesor</a>
-          <a href="#contacto" class="text-sm font-medium text-slate-600 hover:text-brand-500 transition">Contacto</a>
-        </div>
+        <a href="#casos" class="text-sm font-medium text-slate-600 hover:text-brand-500 transition">
+          Casos
+        </a>
 
-        <div class="flex items-center gap-3">
-          <a href="#contacto" id="nav-cta" class="hidden sm:inline-flex btn-primario text-sm">
-            Cuéntanos tu requerimiento
-          </a>
-          <button id="menu-btn" class="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition" aria-label="Menú">
-            <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
+        <a href="#proceso" class="text-sm font-medium text-slate-600 hover:text-brand-500 transition">
+          Cómo trabajamos
+        </a>
 
-    <div id="menu-movil" class="hidden lg:hidden border-t border-slate-200 bg-white">
-      <div class="px-6 py-4 flex flex-col gap-3">
-        <a href="#areas" class="text-sm font-medium text-slate-700 py-2">Áreas</a>
-        <a href="#casos" class="text-sm font-medium text-slate-700 py-2">Casos</a>
-        <a href="#proceso" class="text-sm font-medium text-slate-700 py-2">Cómo trabajamos</a>
-        <a href="#asesor" class="text-sm font-medium text-slate-700 py-2">Asesor</a>
-        <a href="#contacto" class="text-sm font-medium text-slate-700 py-2">Contacto</a>
+        <a href="#asesor" class="text-sm font-medium text-slate-600 hover:text-brand-500 transition">
+          Asesor
+        </a>
+
+        <a href="#contacto" class="text-sm font-medium text-slate-600 hover:text-brand-500 transition">
+          Contacto
+        </a>
       </div>
+
+      <!-- ACCIÓN DE ESCRITORIO -->
+      <a href="#contacto" class="hidden lg:inline-flex btn-primario text-sm">
+        Cuéntanos tu requerimiento
+      </a>
+
     </div>
-  </nav>
+  </div>
+</nav>
+
+
 
   <!-- ══════════════ HERO + MAPA ══════════════ -->
-  <section id="inicio" class="relative pt-28 lg:pt-36 pb-16 lg:pb-24 overflow-hidden bg-gradient-to-b from-brand-50 via-white to-white">
+  <section id="inicio" class="inicio relative pt-20 lg:pt-36 pb-16 lg:pb-24 overflow-hidden bg-gradient-to-b from-brand-50 via-white to-white">
     
     <div class="absolute inset-0 -z-10 overflow-hidden">
       <div class="absolute top-20 -left-20 w-72 h-72 bg-accent/10 rounded-full blur-3xl"></div>
       <div class="absolute top-40 -right-20 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl"></div>
     </div>
-
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      
+     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
         <span class="inline-block px-4 py-1.5 rounded-full bg-brand-100 text-brand-700 text-xs font-semibold tracking-wider uppercase mb-5">
           Soluciones Industriales
@@ -243,7 +248,75 @@
       </button>
     </div>
   </div>
+  
+<!-- NAVEGACIÓN INFERIOR PARA MÓVILES -->
+  <nav
+    aria-label="Navegación principal móvil"
+    class="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white/95 backdrop-blur-md border-t border-slate-200"
+    style="padding-bottom: env(safe-area-inset-bottom);"
+  >
+    <div class="grid grid-cols-4 max-w-lg mx-auto">
 
+      <!-- PLANTA -->
+      <a
+        href="#areas"
+        aria-label="Planta"
+        aria-current="location"
+        class="flex flex-col items-center justify-center gap-1 py-2 text-brand-500"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+            d="M3 21V8l6 3V8l6 3V4h4v17H3Z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+            d="M7 15h2m3 0h2m3 0h2M7 18h2m3 0h2m3 0h2"/>
+        </svg>
+        <span class="text-xs font-semibold">Planta</span>
+      </a>
+
+      <!-- CASOS -->
+      <a
+        href="#casos"
+        aria-label="Casos"
+        class="flex flex-col items-center justify-center gap-1 py-2 text-slate-500 hover:text-brand-500 transition"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke-width="1.8"/>
+          <path stroke-linecap="round" stroke-width="1.8" d="m16 16 4 4"/>
+          <path stroke-linecap="round" stroke-width="1.8" d="M8 11h6M11 8v6"/>
+        </svg>
+        <span class="text-xs font-medium">Casos</span>
+      </a>
+
+      <!-- ASESOR -->
+      <a
+        href="#asesor"
+        aria-label="Asesor"
+        class="flex flex-col items-center justify-center gap-1 py-2 text-slate-500 hover:text-brand-500 transition"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="4" stroke-width="1.8"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+            d="M4 21v-2a8 8 0 0 1 16 0v2H4Z"/>
+        </svg>
+        <span class="text-xs font-medium">Asesor</span>
+      </a>
+
+      <!-- CONTACTO -->
+      <a
+        href="#contacto"
+        aria-label="Contacto"
+        class="flex flex-col items-center justify-center gap-1 py-2 text-slate-500 hover:text-brand-500 transition"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.8"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+            d="m4 7 8 6 8-6"/>
+        </svg>
+        <span class="text-xs font-medium">Contacto</span>
+      </a>
+
+    </div>
+  </nav>
   <script type="module" src="./src/app.js"></script>
 </body>
 </html>
