@@ -2,7 +2,7 @@
 export const config = {
   // ─── Datos de la empresa ───
   empresa: {
-    nombre: "Nombre Empresa",
+    nombre: "Empresa",
     eslogan: "Automatización e instrumentación industrial",
     telefono: "+593 99 999 9999",
     email: "contacto@empresa.com",
@@ -15,12 +15,12 @@ export const config = {
 
   // ─── Mapa de áreas ───
   mapa: {
-    imagen: "img/planta.png",
+    imagen: "img/planta.webp",
     areas: [
       {
         id: 1,
         nombre: "Bodegas",
-        posicion: { top: "28%", left: "70%" },
+        posicion: { top: "38%", left: "60%" },
         color: "#6b9bd1",
         descripcion: "Registro, pesaje y verificación de materiales que ingresan a la planta.",
         soluciones: [
@@ -36,7 +36,7 @@ export const config = {
       {
         id: 2,
         nombre: "Mantenimiento",
-        posicion: { top: "6%", left: "37%" },
+        posicion: { top: "12%", left: "37%" },
         color: "#7dc47d",
         descripcion: "Gestión y control de inventarios de materia prima y producto terminado.",
         soluciones: [
@@ -52,7 +52,7 @@ export const config = {
       {
         id: 3,
         nombre: "Producción",
-        posicion: { top: "10%", left: "53%" },
+        posicion: { top: "24%", left: "49%" },
         color: "#f4a896",
         descripcion: "Transformación de materia prima en producto terminado.",
         soluciones: [
@@ -67,8 +67,8 @@ export const config = {
       },
       {
         id: 4,
-        nombre: "Control y Calidad",
-        posicion: { top: "66%", left: "12%" },
+        nombre: "Administracion",
+        posicion: { top: "38%", left: "25%" },
         color: "#f4c542",
         descripcion: "Administración.",
         soluciones: [
@@ -85,7 +85,7 @@ export const config = {
       {
         id: 6,
         nombre: "Logística / Despacho",
-        posicion: { top: "85%", left: "34%" },
+        posicion: { top: "63%", left: "48%" },
         color: "#7ec8c8",
         descripcion: "Preparación de pedidos y despacho de producto terminado.",
         soluciones: [
@@ -101,7 +101,7 @@ export const config = {
       {
         id: 5,
         nombre: "Servicios industriales",
-        posicion: { top: "15%", left: "3%" },
+        posicion: { top: "32%", left: "15%" },
         color: "#e89b7d",
         descripcion: "Suministro de servicios auxiliares (agua, vapor, aire, energía).",
         soluciones: [
@@ -119,9 +119,9 @@ export const config = {
 
   // ─── Asesor ───
   asesor: {
-    nombre: "Ing. Juan Pérez",
+    nombre: "Ingra. Stefania Vera",
     cargo: "Especialista en Automatización Industrial",
-    foto: "img/asesor.jpg",
+    foto: "img/asesor.webp",
     whatsapp: "593999999999",
     mensajeWhatsapp: "Hola, vengo de la web y quiero asesoría técnica."
   },
@@ -131,23 +131,43 @@ export const config = {
     {
       titulo: "Automatización de línea de empaque",
       area: "Empacado",
-      imagen: "img/casos/caso-1.jpg",
+      imagen: "img/caso-3.webp",
       descripcion: "Reducción del 40% en tiempo de empaque mediante PLC y visión artificial.",
       resultado: "40% más rápido"
     },
     {
       titulo: "Control de calidad en línea",
       area: "Control y Calidad",
-      imagen: "img/casos/caso-2.jpg",
+      imagen: "img/caso-5.webp",
       descripcion: "Detección automática de defectos con cámaras de alta velocidad.",
       resultado: "99.5% precisión"
     },
     {
       titulo: "Monitoreo de variables críticas",
       area: "Producción",
-      imagen: "img/casos/caso-3.jpg",
+      imagen: "img/caso-2.webp",
       descripcion: "Sistema SCADA para monitoreo en tiempo real de 150 variables.",
       resultado: "24/7 monitoreo"
+    }
+  ],
+
+  // ─── Cómo trabajamos ───
+  proceso: [
+    {
+      titulo: "Diagnóstico en planta",
+      descripcion: "Revisamos el proceso, las variables críticas y los puntos donde la operación puede ganar seguridad, trazabilidad o eficiencia."
+    },
+    {
+      titulo: "Ingeniería de la solución",
+      descripcion: "Definimos la instrumentación, automatización e integración necesarias para que la propuesta se adapte a tu proceso y presupuesto."
+    },
+    {
+      titulo: "Implementación y puesta en marcha",
+      descripcion: "Instalamos, configuramos y validamos la solución junto a tu equipo, procurando una transición ordenada hacia la operación."
+    },
+    {
+      titulo: "Acompañamiento y mejora continua",
+      descripcion: "Damos soporte técnico y seguimiento a los resultados para mantener el sistema confiable y detectar nuevas oportunidades de optimización."
     }
   ],
 

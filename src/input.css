@@ -24,6 +24,12 @@ font-size: clamp(10px, 1.2vw, 16px);
            hover:border-brand-500 hover:text-brand-500 transition;
   }
   .inicio{
-    height: 100vh;
+    height: 100%;
+  }
+  .vista-contenedor {
+    height: calc(100svh - 9rem - env(safe-area-inset-bottom, 0px));
+  }
+  #mapa-contenedor {
+    aspect-ratio: 800 / 452;
   }
 }

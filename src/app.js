@@ -110,7 +110,7 @@ casosGrid.innerHTML = config.casos.map(c => `
 
 // ══════════════ TIMELINE PROCESO ══════════════
 const timeline = document.getElementById('timeline');
-timeline.innerHTML = config.proceso.map((p, i) => `
+timeline.innerHTML = (config.proceso ?? []).map((p, i) => `
   <li class="ml-8 relative">
     <span class="absolute -left-12 top-0 w-8 h-8 rounded-full bg-brand-500 text-white 
                  flex items-center justify-center text-sm font-bold border-4 border-white shadow-md">
@@ -170,7 +170,8 @@ const vistas = {
   casos: document.getElementById('casos'),
   proceso: document.getElementById('proceso'),
   asesor: document.getElementById('asesor'),
-  contacto: document.getElementById('contacto')
+  contacto: document.getElementById('contacto'),
+  pie: document.getElementById('pie')
 };
 
 function mostrarVista(nombreVista) {
@@ -217,21 +218,17 @@ function mostrarVista(nombreVista) {
   });
 
   // Volver al inicio del contenido.
-  window.scrollTo({
-    top: 0,
-    behavior: 'auto'
-  });
+  document.getElementById('contenedor-vistas').scrollTop = 0;
 }
 
 // ══════════════ EVENTOS DE NAVEGACIÓN ══════════════
 
-document.querySelectorAll('[data-vista]').forEach(enlace => {
-  enlace.addEventListener('click', evento => {
-    evento.preventDefault();
+document.addEventListener('click', evento => {
+  const enlace = evento.target.closest('a[data-vista]');
+  if (!enlace) return;
 
-    const nombreVista = enlace.dataset.vista;
-    mostrarVista(nombreVista);
-  });
+  evento.preventDefault();
+  mostrarVista(enlace.dataset.vista);
 });
 // ══════════════ VISTA INICIAL ══════════════
 
@@ -257,8 +254,8 @@ document.getElementById('footer-contenido').innerHTML = `
   </div>
   <div>
     <h4 class="font-bold text-white mb-4">Navegación</h4>
-    <a href="#areas" class="block text-sm text-slate-400 hover:text-white transition mb-1">Áreas</a>
-    <a href="#casos" class="block text-sm text-slate-400 hover:text-white transition mb-1">Casos</a>
-    <a href="#contacto" class="block text-sm text-slate-400 hover:text-white transition">Contacto</a>
+    <a href="#inicio" data-vista="planta" class="block text-sm text-slate-400 hover:text-white transition mb-1">Áreas</a>
+    <a href="#casos" data-vista="casos" class="block text-sm text-slate-400 hover:text-white transition mb-1">Casos</a>
+    <a href="#contacto" data-vista="contacto" class="block text-sm text-slate-400 hover:text-white transition">Contacto</a>
   </div>
 `;
