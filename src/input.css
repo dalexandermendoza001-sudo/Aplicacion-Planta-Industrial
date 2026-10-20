@@ -1,6 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #eef6ff;
+  --color-brand-100: #d9eaff;
+  --color-brand-500: #0066cc;
+  --color-brand-600: #0052a3;
+  --color-brand-700: #003d7a;
+  --color-brand-900: #0a1929;
+
+  --color-accent: #00d4ff;
+
+  --font-sans: "Inter", system-ui, sans-serif;
+}
 
 /* Componentes personalizados */
 @layer components {
