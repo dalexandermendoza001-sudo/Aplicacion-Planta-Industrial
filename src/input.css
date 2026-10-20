@@ -32,4 +32,12 @@ font-size: clamp(10px, 1.2vw, 16px);
   #mapa-contenedor {
     aspect-ratio: 800 / 452;
   }
+  #produccion-mapa-contenedor,
+  #bodegas-mapa-contenedor,
+  #mantenimiento-mapa-contenedor,
+  #despacho-mapa-contenedor,
+  #administracion-mapa-contenedor,
+  #servicios-industriales-mapa-contenedor {
+    aspect-ratio: 1792 / 1344;
+  }
 }

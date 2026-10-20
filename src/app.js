@@ -14,7 +14,7 @@ mapaImagen.src = config.mapa.imagen;
 
 config.mapa.areas.forEach(area => {
   const btn = document.createElement('button');
-  btn.className = 'marcador';
+  btn.className = 'marcador group';
   btn.style.top = area.posicion.top;
   btn.style.left = area.posicion.left;
   btn.style.backgroundColor = area.color;
@@ -23,14 +23,51 @@ config.mapa.areas.forEach(area => {
   btn.innerHTML = `
     ${area.id}
     <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-slate-900 text-white 
-                 px-1 py-1 rounded-lg text-xs whitespace-nowrap opacity-0 hover:opacity-100 
+                 px-1 py-1 rounded-lg text-xs whitespace-nowrap opacity-0 group-hover:opacity-100
                  transition pointer-events-none">
       ${area.nombre}
     </span>
   `;
-  btn.addEventListener('click', () => abrirPanel(area));
+  btn.addEventListener('click', () => {
+    if (area.subareas?.length && area.vistaDetalle) {
+      mostrarVista(area.vistaDetalle);
+      return;
+    }
+    abrirPanel(area);
+  });
   mapaContenedor.appendChild(btn);
 });
+
+// ══════════════ MAPAS DETALLADOS ══════════════
+function renderizarMapaDetalle(area) {
+  const mapaContenedorDetalle = document.getElementById(`${area.vistaDetalle}-mapa-contenedor`);
+  const mapaImagenDetalle = document.getElementById(`${area.vistaDetalle}-mapa-imagen`);
+
+  if (!mapaContenedorDetalle || !mapaImagenDetalle || !area.imagenDetalle || !area.subareas?.length) return;
+
+  mapaImagenDetalle.src = area.imagenDetalle;
+
+  area.subareas.forEach((subarea, indice) => {
+    const btn = document.createElement('button');
+    btn.className = 'marcador group';
+    btn.style.top = subarea.posicion.top;
+    btn.style.left = subarea.posicion.left;
+    btn.style.backgroundColor = area.color;
+    btn.setAttribute('aria-label', `Ver oportunidades en ${subarea.nombre}`);
+    btn.innerHTML = `
+      ${indice + 1}
+      <span class="pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 whitespace-nowrap rounded-lg bg-slate-900 px-2 py-1 text-xs text-white opacity-0 transition group-hover:opacity-100">
+        ${subarea.nombre}
+      </span>
+    `;
+    btn.addEventListener('click', () => abrirPanel(subarea, area));
+    mapaContenedorDetalle.appendChild(btn);
+  });
+}
+
+config.mapa.areas
+  .filter(area => area.vistaDetalle)
+  .forEach(renderizarMapaDetalle);
 
 // ══════════════ PANEL DE ÁREA ══════════════
 const panelOverlay = document.getElementById('panel-overlay');
@@ -40,17 +77,24 @@ const panelSoluciones = document.getElementById('panel-soluciones');
 const panelPreguntas = document.getElementById('panel-preguntas');
 const panelCta = document.getElementById('panel-cta');
 const cerrarPanel = document.getElementById('cerrar-panel');
+const panelEtiquetaSoluciones = document.getElementById('panel-etiqueta-soluciones');
+const panelEtiquetaPreguntas = document.getElementById('panel-etiqueta-preguntas');
 
-function abrirPanel(area) {
+function abrirPanel(area, areaPrincipal = null) {
   panelTitulo.textContent = area.nombre;
   panelDescripcion.textContent = area.descripcion;
+  const problemasOPreguntas = area.preguntas ?? area.problemas ?? [];
+  const esSubarea = Boolean(areaPrincipal);
+  panelEtiquetaSoluciones.textContent = esSubarea ? 'Mejoras posibles:' : 'Soluciones típicas:';
+  panelEtiquetaPreguntas.textContent = esSubarea ? 'Problemas frecuentes:' : 'Para entender mejor tu caso:';
+  panelCta.textContent = esSubarea ? 'Solicitar diagnóstico técnico' : 'Quiero mejorar esta área';
   
   panelSoluciones.innerHTML = area.soluciones
     .map(s => `<li class="flex items-start gap-2 text-slate-700">
       <span class="text-brand-500 mt-1">✓</span><span>${s}</span>
     </li>`).join('');
   
-  panelPreguntas.innerHTML = area.preguntas
+  panelPreguntas.innerHTML = problemasOPreguntas
     .map(p => `<li class="flex items-start gap-2 text-slate-600 text-sm">
       <span class="text-slate-400 mt-1">?</span><span>${p}</span>
     </li>`).join('');
@@ -58,8 +102,7 @@ function abrirPanel(area) {
  panelCta.onclick = () => {
   cerrarPanelFn();
 
-  document.getElementById('form-area').value = area.id;
-
+  document.getElementById('form-area').value = areaPrincipal?.id ?? area.id;
   mostrarVista('contacto');
 };
   
@@ -167,8 +210,14 @@ formulario.addEventListener('submit', async (e) => {
 
 const vistas = {
   planta: document.getElementById('inicio'),
+  bodegas: document.getElementById('bodegas'),
+  mantenimiento: document.getElementById('mantenimiento'),
+  despacho: document.getElementById('despacho'),
+  administracion: document.getElementById('administracion'),
+  'servicios-industriales': document.getElementById('servicios-industriales'),
   casos: document.getElementById('casos'),
   proceso: document.getElementById('proceso'),
+  produccion: document.getElementById('produccion'),
   asesor: document.getElementById('asesor'),
   contacto: document.getElementById('contacto'),
   pie: document.getElementById('pie')
