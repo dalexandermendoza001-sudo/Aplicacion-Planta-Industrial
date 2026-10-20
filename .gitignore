@@ -10,3 +10,6 @@ node_modules/
 
 # Plantillas de entorno permitidas
 !.env.example
+# Archivos de configuración de editores locales
+proyecto1.geany
+.vscode/
