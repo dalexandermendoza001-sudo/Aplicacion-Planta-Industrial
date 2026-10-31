@@ -15,7 +15,7 @@ export const config = {
 
   // ─── Mapa de áreas ───
   mapa: {
-    imagen: "img/planta.webp",
+    imagen: "./img/planta-interactiva1.svg",
     areas: [
       {
         id: 1,
